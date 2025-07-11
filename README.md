@@ -1,4 +1,4 @@
-# 🐍 yokharianpythontemplate
+# 🐍 Python Template
 Template to quickly bootstrap Python projects.
 
 Uses [PDM](https://pdm.fming.dev/) to manage dependencies, build distributions and publish to package repositories.
@@ -12,7 +12,7 @@ Uses [PDM](https://pdm.fming.dev/) to manage dependencies, build distributions a
 - Integration with [Visual Studio Code](https://code.visualstudio.com/)
 - Building and publishing to [PyPI](https://pypi.org/project/yokharianpythontemplate/)
 - Documentation hosted on [Github pages](https://yokharian.github.io/PythonTemplate/)
-- CI/CD with [Github actions](https://docs.gitlab.com/ee/ci/)
+- CI/CD with [Github actions](https://docs.github.com/en/actions)
 - Several useful implementations
 	- CLI
 	- Type hints
