@@ -1,0 +1,46 @@
+{
+   "version":"2.0.0",
+   "tasks":[
+      {
+         "label":"PDM",
+         "type":"shell",
+         "command":"pdm ${input:pdm}",
+         "icon":{
+            "id":"symbol-function",
+            "color":"terminal.ansiMagenta"
+         },
+         "problemMatcher":[
+
+         ]
+      }
+   ],
+   "inputs":[
+      {
+         "id":"pdm",
+         "type":"pickString",
+         "description":"Select command",
+         "options":[
+            {
+               "label":"⬇️ Install (dev)",
+               "value":"install --dev"
+            },
+            {
+               "label":"🧪 Test",
+               "value":"run test"
+            },
+            {
+               "label":"🧪 Test with coverage",
+               "value":"run test_coverage"
+            },
+            {
+               "label":"🛠️ Build",
+               "value":"build"
+            },
+            {
+               "label":"⬆️ Build docs",
+               "value":"docs"
+            }
+         ]
+      }
+   ]
+}

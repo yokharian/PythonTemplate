@@ -1,0 +1,47 @@
+{
+   "version":"1.0.0",
+   "configurations":[
+      {
+         "name":"Package entry point",
+         "type":"debugpy",
+         "request":"launch",
+         "module":"project_template",
+         "args":[
+            "invert",
+            "hello world"
+         ],
+         "justMyCode":false,
+         "variablePresentation":{
+            "class":"inline",
+            "function":"inline"
+         }
+      },
+      {
+         "name":"Examples",
+         "type":"debugpy",
+         "request":"launch",
+         "program":"examples/example1.py",
+         "justMyCode":false,
+         "variablePresentation":{
+            "class":"inline",
+            "function":"inline"
+         }
+      },
+      {
+         "name":"Tests",
+         "type":"debugpy",
+         "request":"launch",
+         "purpose":[
+            "debug-test"
+         ],
+         "justMyCode":false,
+         "presentation":{
+            "hidden":true
+         },
+         "variablePresentation":{
+            "class":"inline",
+            "function":"inline"
+         }
+      }
+   ]
+}
