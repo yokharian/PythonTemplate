@@ -1,0 +1,114 @@
+[project]
+    name = "yokharianpythontemplate"
+    dynamic = ["version"]
+    description = ""
+    authors = [
+        { name = "Sofia Escobedo", email = "63127299+yokharian@users.noreply.github.com" }
+    ]
+    readme = "README.md"
+    requires-python = ">=3.12"
+
+    classifiers = [
+        "Programming Language :: Python :: 3",
+        "Operating System :: OS Independent",
+        "License :: OSI Approved :: The Unlicense (Unlicense)",
+    ]
+
+    dependencies = []
+
+    [project.scripts]
+        project-template = "project_template.cli:main"
+
+[build-system]
+    build-backend = "pdm.backend"
+    requires = [
+        "pdm-backend",
+        "./scripts",
+    ]
+
+#[tool]
+
+    [tool.pdm]
+        version.source = "scm"
+        plugins = ["-e ./build"]
+
+    [tool.pdm.scripts]
+        test_coverage.shell = "coverage run -m unittest discover --pattern '*_tests.py' --start-directory tests/ --verbose && coverage report && coverage xml"
+        test_coverage.help = "Run tests with code coverage."
+
+        test.shell = "python -m unittest discover --pattern '*_tests.py' --start-directory tests/ --verbose"
+        test.help = "Run tests"
+
+        docs.shell = "cd docs/ && mkdocs build"
+        docs.help = "Build documentation with MkDocs."
+
+    [tool.pyright]
+        typeCheckingMode = "strict"
+        reportMissingTypeStubs = "none"
+        reportUnnecessaryTypeIgnoreComment = "error"
+        reportMissingSuperCall = "warning"
+        reportUnknownLambdaType = "none"
+
+    [tool.pylint]
+        indent-string = "\t"
+        check-quote-consistency = true
+        ignore-long-lines = "https?://\\S{82,}|# pyright: ignore"
+
+        load-plugins = [
+            "pylint.extensions.docparams",
+            "pylint.extensions.overlapping_exceptions",
+            "pylint.extensions.code_style",
+        ]
+
+        enable = [
+            "useless-suppression",
+            "consider-using-augmented-assign",
+            "use-implicit-booleaness-not-comparison-to-string",
+        ]
+
+        disable = [
+            "trailing-whitespace",
+            "missing-final-newline",
+            "logging-fstring-interpolation",
+            "too-few-public-methods",
+        ]
+
+        variable-naming-style = "camelCase"
+        inlinevar-naming-style = "camelCase"
+        function-naming-style = "camelCase"
+        argument-naming-style = "camelCase"
+        method-naming-style = "camelCase"
+        class-attribute-naming-style = "camelCase"
+        attr-naming-style = "camelCase"
+
+        module-naming-style = "snake_case"
+        class-naming-style = "PascalCase"
+        const-naming-style = "UPPER_CASE"
+        class-const-naming-style = "UPPER_CASE"
+
+        no-docstring-rgx = "^__|.+Tests$|^test|^[Ff]oo$|^[Bb]ar$"
+        dummy-variables-rgx = "^(_|[Ff]oo|[Bb]ar)$"
+        bad-names = []
+
+    [tool.coverage.run]
+        source_pkgs = ["project_template"]
+        data_file = ".staging/coverage"
+        branch = true
+
+    [tool.coverage.report]
+        precision = 2
+        skip_covered = true
+        show_missing = true
+
+    [tool.coverage.xml]
+        output = ".staging/coverage.xml"
+
+[dependency-groups]
+    dev = [
+        "coverage == 7.3.2",
+        "pdm-backend == 2.1.7",
+        "pylint == 2.17.7",
+        "boto3-stubs >= 1.39.4",
+        "black >= 25.1.0",
+        "mkdocs-material >= 9.4.7",
+    ]
