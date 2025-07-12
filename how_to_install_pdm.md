@@ -1,0 +1,1 @@
+./docs/src/how_to_install_pdm.md
