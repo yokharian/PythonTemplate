@@ -22,7 +22,7 @@ For a detailed description of all features check the [documentation](https://yok
 
 ### Developers
 
-1. If you don't have already installed [PDM]((https://pdm-project.org)) install it -> [HOW_TO_INSTALL_PDM.md](scripts/HOW_TO_INSTALL_PDM.md)
+1. If you don't have already installed [PDM](https://pdm-project.org) install it -> [HOW_TO_INSTALL_PDM.md](./how_to_install_pdm.md)
    
 2. Create a virtual environment for python and install dependencies running the following command:
 

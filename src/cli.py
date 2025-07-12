@@ -10,7 +10,7 @@ from importlib.metadata import version
 from typing import Any
 
 from src import __doc__ as package_docstring
-from src.core import MyClass
+from src.core import StringManipulator
 
 
 def main() -> int:
@@ -57,7 +57,7 @@ def invert(message: str, **_kwargs: Any) -> int:
     TODO CLI command docstring.
     """
 
-    inverted = MyClass.invert_case(message)
+    inverted = StringManipulator.invert_case(message)
     print(inverted)
 
     return 0
