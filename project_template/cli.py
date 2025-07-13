@@ -9,8 +9,8 @@ import argparse
 from importlib.metadata import version
 from typing import Any
 
-from src import __doc__ as package_docstring
-from src.core import StringManipulator
+from project_template import __doc__ as package_docstring
+from project_template.core import StringManipulator
 
 
 def main() -> int:
